@@ -1,12 +1,29 @@
+import { createElement } from "react"
+
 const Cake = ({cake}) => {
 
     // const cakeComponents = cakes.map(cake => {
     //   return <Cake cake={cake}/>
     // })
-  
+
+    // const ingredientsToShow = document.querySelector("ul")
+    //  (let ingredient of cake.ingredients) {
+    //   <li>ingredientsToShow.appendChild(ingredient)</li>;
+    // }
+
+    const ingredientsToShow = cake.ingredients.map(ingredient => {
+      return <li>{ingredient}</li>
+    })
+
     return (
       <>
-          <h2>This is a cake</h2>
+          <div>
+            <p><b>Name: </b>{cake.cakeName}</p>
+            <p><b>Rating: </b>{cake.rating}</p>
+            <ul>
+            {ingredientsToShow}
+            </ul>
+          </div>
       </>
     )
   }
