@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CakeList from "./CakeList";
+import CakeForm from "./CakeForm";
 
 const CakeContainer = () => {
 
@@ -51,8 +52,15 @@ const CakeContainer = () => {
 		]		
 	)
 
-  return (
+	const handleNewUserSubmission = (newCake) =>{
+		const updatedCakes = [...listOfCakes];
+		updatedCakes.push(newCake);
+		setListOfCakes(updatedCakes);
+	}
+
+  	return (
 	<>
+		<CakeForm onNewCakeSubmission={handleNewUserSubmission}/>
 		<CakeList listOfCakes={listOfCakes}/>
 	</>
   )
