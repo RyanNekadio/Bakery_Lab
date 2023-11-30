@@ -52,15 +52,16 @@ const CakeContainer = () => {
 		]		
 	)
 
-	const handleNewUserSubmission = (newCake) =>{
+	const handleNewCakeSubmission = (newCake) =>{
 		const updatedCakes = [...listOfCakes];
 		updatedCakes.push(newCake);
+		console.log(newCake);
 		setListOfCakes(updatedCakes);
 	}
 
   	return (
 	<>
-		<CakeForm onNewCakeSubmission={handleNewUserSubmission}/>
+		<CakeForm onNewCakeSubmission={handleNewCakeSubmission}/>
 		<CakeList listOfCakes={listOfCakes}/>
 	</>
   )

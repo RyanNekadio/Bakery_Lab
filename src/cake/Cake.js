@@ -11,8 +11,8 @@ const Cake = ({cake}) => {
     //   <li>ingredientsToShow.appendChild(ingredient)</li>;
     // }
 
-    const ingredientsToShow = cake.ingredients.map(ingredient => {
-      return <li>{ingredient}</li>
+    const ingredientsToShow = cake.ingredients.map((ingredient, index) => {
+      return <li key={index}>{ingredient}</li>
     })
 
     return (
@@ -20,6 +20,7 @@ const Cake = ({cake}) => {
           <div>
             <p><b>Name: </b>{cake.cakeName}</p>
             <p><b>Rating: </b>{cake.rating}</p>
+            <p><b>Price: </b>{cake.price}</p>
             <ul>
             {ingredientsToShow}
             </ul>
